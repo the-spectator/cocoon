@@ -1,6 +1,11 @@
 require 'cocoon/view_helpers'
 
 module Cocoon
+
+  def self.root
+    @root ||= Pathname.new(__FILE__).dirname.freeze
+  end
+
   class Engine < ::Rails::Engine
 
     config.before_initialize do
